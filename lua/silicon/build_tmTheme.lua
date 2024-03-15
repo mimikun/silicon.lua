@@ -3,25 +3,29 @@
 ---@param value? string foreground/background
 ---@return string hex value
 local hl = function(hl_name, value)
-	if value == "fg" then
-		value = "foreground"
-	end
-	if value == "bg" then
-		value = "background"
-	end
-        -- Default to foreground if no value is given
-	value = value or "foreground"
-	local hl = vim.api.nvim_get_hl_by_name(hl_name, true)
-        -- If highlight doesn't exist, default to the value for "Normal"
-	if not hl[value] then
-		hl[value] = vim.api.nvim_get_hl_by_name("Normal", true)[value] or vim.api.nvim_get_hl_by_name("Cursorline", true)[value]
-	end
-	local color = string.format("#%06x", hl[value])
-	return color
+    if value == "fg" then
+        value = "foreground"
+    end
+    if value == "bg" then
+        value = "background"
+    end
+    -- Default to foreground if no value is given
+    value = value or "foreground"
+    -- TODO: Fix depereaction warning
+    local hl = vim.api.nvim_get_hl_by_name(hl_name, true)
+    -- If highlight doesn't exist, default to the value for "Normal"
+    if not hl[value] then
+        -- TODO: Fix depereaction warning
+        hl[value] = vim.api.nvim_get_hl_by_name("Normal", true)[value]
+            -- TODO: Fix depereaction warning
+            or vim.api.nvim_get_hl_by_name("Cursorline", true)[value]
+    end
+    local color = string.format("#%06x", hl[value])
+    return color
 end
 
 return function()
-	return [[<?xml version="1.0" encoding="UTF-8"?>
+    return [[<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
