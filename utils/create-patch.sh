@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PRODUCT_NAME="silicon.lua"
+PRODUCT_NAME="silicon.nvim"
 DEFAULT_REMOTE="origin"
 DEFAULT_BRANCH="master"
 TODAY=$(date +'%Y%m%d')

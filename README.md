@@ -1,4 +1,4 @@
-# silicon.lua
+# silicon.nvim
 
 **silicon** is a lua plugin for neovim to generate beautiful images of code snippet using [silicon](https://github.com/aloxaf/silicon) 
 
@@ -25,7 +25,7 @@ Install the plugin with your preferred package manager:
 ```lua
 -- Lua
 use {
-  "narutoxy/silicon.lua",
+  "narutoxy/silicon.nvim",
   requires = { "nvim-lua/plenary.nvim" },
   config = function()
     require('silicon').setup({})

@@ -153,14 +153,14 @@ request.exec = function(range, show_buffer, copy_to_board)
                         msg = string.format("Snap saved to %s", opts.output)
                     end
                     vim.defer_fn(function()
-                        vim.notify(msg, vim.log.levels.INFO, { plugin = "silicon.lua" })
+                        vim.notify(msg, vim.log.levels.INFO, { plugin = "silicon.nvim" })
                     end, 0)
                 else
                     vim.defer_fn(function()
                         vim.notify(
                             "Some error occurred while executing silicon",
                             vim.log.levels.ERROR,
-                            { plugin = "silicon.lua" }
+                            { plugin = "silicon.nvim" }
                         )
                     end, 0)
                 end

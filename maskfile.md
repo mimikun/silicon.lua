@@ -1,4 +1,4 @@
-# Tasks for silicon.lua
+# Tasks for silicon.nvim
 
 Using [mask](https://github.com/jacobdeichert/mask)
 
@@ -95,7 +95,7 @@ param(
     $gpg = $env:gpg
 )
 
-$product_name = "silicon.lua"
+$product_name = "silicon.nvim"
 $default_remote = "origin"
 $default_branch = "master"
 $today = Get-Date -UFormat '%Y%m%d'
