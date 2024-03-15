@@ -2,8 +2,6 @@
 
 **silicon** is a lua plugin for neovim to generate beautiful images of code snippet using [silicon](https://github.com/aloxaf/silicon) 
 
-This repository is fork. original README is [here](README-original.md).
-
 <video src = "https://user-images.githubusercontent.com/79555780/198016165-7a47ac6c-e329-4025-8d66-f9b34bd52658.mp4"></video>
 
 ## ✨ Features
@@ -13,7 +11,7 @@ This repository is fork. original README is [here](README-original.md).
 
 ## ⚡️ Requirements
 
-- Neovim HEAD
+- Neovim >= 0.6.0
 - [silicon](https://github.com/aloxaf/silicon)
 
 ## 📦 Installation
@@ -33,6 +31,16 @@ use {
 }
 ```
 
+### [vim-plug](https://github.com/junegunn/vim-plug)
+
+```vim
+" Vim Script
+Plug 'nvim-lua/plenary.nvim'
+Plug 'narutoxy/silicon.lua'
+
+lua require('silicon').setup({})
+```
+
 ## ⚙️ Configuration
 
 silicon comes with the following defaults:
@@ -40,31 +48,23 @@ silicon comes with the following defaults:
 ```lua
 {
 	theme = "auto",
-    -- auto generate file name based on time (absolute or relative to cwd)
-	output = "SILICON_${year}-${month}-${date}_${time}.png",
+	output = "SILICON_${year}-${month}-${date}_${time}.png", -- auto generate file name based on time (absolute or relative to cwd)
 	bgColor = vim.g.terminal_color_5,
-    -- path to image, must be png
-	bgImage = "",
+	bgImage = "", -- path to image, must be png
 	roundCorner = true,
 	windowControls = true,
 	lineNumber = true,
 	font = "monospace",
-    -- from where to start line number
-	lineOffset = 1,
-    -- padding between lines
-	linePad = 2,
-    -- Horizontal padding
-	padHoriz = 80,
-    -- vertical padding
-	padVert = 100,
+	lineOffset = 1, -- from where to start line number
+	linePad = 2, -- padding between lines
+	padHoriz = 80, -- Horizontal padding
+	padVert = 100, -- vertical padding
 	shadowBlurRadius = 10,
 	shadowColor = "#555555",
 	shadowOffsetX = 8,
 	shadowOffsetY = 8,
-    -- enable lsautogobble like feature
-	gobble = false,
-    -- enable debug output
-	debug = false,
+	gobble = false, -- enable lsautogobble like feature
+	debug = false, -- enable debug output
 }
 ```
 
